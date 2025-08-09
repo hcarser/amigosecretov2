@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Amigo Secreto | Sorteo Inteligente</title>
+    <meta name="description" content="Organiza tu sorteo de amigo secreto de forma fácil, rápida y segura.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen flex flex-col">
+    <!-- Encabezado -->
+    <header class="bg-white shadow-md py-6 px-4 flex flex-col items-center">
+        <img src="https://img.icons8.com/ios-filled/50/4f46e5/gift.png" alt="Amigo Secreto" class="mb-2 w-12 h-12">
+        <h1 class="text-3xl font-extrabold text-indigo-700 mb-1 text-center">Sorteo Amigo Secreto</h1>
+        <p class="text-gray-600 text-center max-w-xl">Organiza tu sorteo de amigo secreto de manera sencilla, segura y divertida. ¡Agrega los nombres, sortéalos y comparte la emoción!</p>
+    </header>
+
+    <!-- Cuerpo principal -->
+    <main class="flex-1 flex flex-col items-center justify-center px-4">
+        <section class="bg-white rounded-xl shadow-lg w-full max-w-lg p-8 mt-8">
+            <h2 class="text-xl font-semibold text-indigo-600 mb-6 text-center">¡Comienza tu sorteo!</h2>
+            
+            <div class="mb-4">
+                <input 
+                    type="text" 
+                    id="nombreInput" 
+                    placeholder="Introduce un nombre" 
+                    class="w-full p-3 border border-indigo-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400 transition"
+                >
+                <button 
+                    onclick="agregarNombre()" 
+                    class="mt-3 w-full bg-indigo-600 text-white p-3 rounded-lg font-medium hover:bg-indigo-700 transition"
+                >
+                    Agregar Nombre
+                </button>
+            </div>
+
+            <div id="listaNombres" class="mb-6">
+                <h3 class="font-semibold text-gray-700 mb-2">Nombres agregados:</h3>
+                <ul id="nombres" class="list-disc pl-5"></ul>
+            </div>
+
+            <button 
+                id="sortearBtn" 
+                onclick="sortearNombres()" 
+                class="w-full bg-green-500 text-white p-3 rounded-lg font-medium hover:bg-green-600 transition hidden"
+            >
+                Sortear Nombres
+            </button>
+
+            <div id="resultadosContainer" class="mt-6 hidden">
+                <div class="flex justify-between items-center mb-2">
+                    <h4 class="font-semibold text-gray-700">Resultados del Sorteo:</h4>
+                    <button 
+                        onclick="toggleTodosResultados()" 
+                        id="toggleTodosBtn"
+                        class="text-sm bg-gray-100 px-3 py-1 rounded-lg hover:bg-gray-200 transition"
+                    >
+                        Mostrar Todos
+                    </button>
+                </div>
+                <div id="resultados"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-white mt-auto py-6 px-4 shadow-inner text-center">
+        <div class="flex flex-col items-center gap-2">
+            <span class="text-gray-500 text-sm">Desarrollado por <strong>Humberto Cárdenas</strong> | 2025</span>
+            <span class="text-gray-400 text-xs">Este sitio no almacena datos personales. ¡Tu sorteo es privado y seguro!</span>
+            <a href="mailto:humberto.cardenas@email.com" class="text-indigo-500 hover:underline text-sm">Contacto</a>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>   
+    </body>
+</html>
